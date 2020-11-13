@@ -1,20 +1,36 @@
+//Ezequiel Laurito Nogueira 1º DAM
+//Program that calculate the average of marks introduced by user
 using System;
-public class Average{
-public static void Main(){
-double a=0, b, c=0, d;
-string s;
-Console.Write("Insert a mark: ");
-s=Console.ReadLine();	// we read the mark as string to check the word "end"	 
-while(s!="end"){  // if the mark isn't an end then we pass it to double to work with it
-b=Convert.ToDouble(s);
-c++;   //counter of numbers
-a+=b;  // sum of all the notes
-Console.Write("Insert a mark: ");
-s=Console.ReadLine();
-}
-if(c!=0){
-	d=a/c;  //calculate the average
-Console.WriteLine("The average is {0}.",d);
-}
-}
+
+public class Average
+{
+    public static void Main()
+    {
+        //Variable
+        double total = 0, doubleNumber, quantityofNumbers = 0, totalAverage;
+        string typedNumber;
+
+        //MAIN
+        Console.Write("Insert a mark: ");
+        typedNumber = Console.ReadLine();	
+    
+        //Convert the typed name to added it and calculate the average later
+        while (typedNumber != "end") 
+        {  
+            doubleNumber = Convert.ToDouble(typedNumber);
+
+            quantityofNumbers++;
+            
+            total += doubleNumber;  
+
+            Console.Write("Insert a mark: ");
+            typedNumber = Console.ReadLine();
+        }
+        
+        if (quantityofNumbers != 0)
+        {
+            totalAverage = total/quantityofNumbers;  
+            Console.WriteLine("The average is {0}.",totalAverage);
+        }
+    }
 }
